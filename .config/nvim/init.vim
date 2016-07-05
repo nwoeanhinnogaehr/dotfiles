@@ -15,6 +15,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'zchee/deoplete-jedi'
 Plug 'jceb/vim-orgmode'
 Plug 'tpope/vim-speeddating'
+Plug 'rust-lang/rust.vim'
+Plug 'racer-rust/vim-racer'
 
 " Add plugins to &runtimepath
 call plug#end()
