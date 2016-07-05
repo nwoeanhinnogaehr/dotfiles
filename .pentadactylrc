@@ -1,0 +1,55 @@
+"1.2pre
+
+loadplugins '\.(js|penta)$'
+group user
+highlight -link=FontFixed CompItem
+highlight -link=FontFixed CompTitle color: magenta; background: white; font-weight: bold;
+highlight FontFixed font-family: monospace !important; font-size: 12pt !important;
+highlight -link=FontFixed Hint font: bold 10px "Droid Sans Mono", monospace !important; margin: -.2ex; padding: 0 0 0 1px; outline: 1px solid rgba(0, 0, 0, .5); background: rgba(255, 248, 231, .8); color: black;
+map -count -modes=n,v `` <count>`'
+map -count -modes=n,v <C-j> <count><C-n>
+map -count -modes=n,v <C-k> <count><C-p>
+map -count -modes=n,v <Down> <count><C-v><Down>
+map -count -modes=n,v <Left> <count><C-v><Left>
+map -count -modes=n,v <lt> <count><C-t>H
+map -count -modes=n,v <Right> <count><C-v><Right>
+map -count -modes=n,v <Up> <count><C-v><Up>
+map -count -modes=n,v > <count><C-t>L
+map -count -modes=n,v h <count><M-Left>
+map -count -modes=n,v j <count><C-v><Down>
+map -count -modes=n,v k <count><C-v><Up>
+map -count -modes=n,v l <count><M-Right>
+map -count -modes=n,v s <count>:execute<Space>"open<Space>google<Space>"<Space>+<Space>readFromClipboard()<Return>
+map -count -modes=n,v w <count>:execute<Space>"open<Space>w<Space>"<Space>+<Space>readFromClipboard()<Return>
+map -count -modes=n,v W <count>:execute<Space>"tabopen<Space>w<Space>"<Space>+<Space>readFromClipboard()<Return>
+map -count -modes=n,v S <count>:execute<Space>"tabopen<Space>google<Space>"<Space>+<Space>readFromClipboard()<Return>
+set cdpath=''
+set complete=buffer,history,suggestion
+set defsearch=''
+
+js <<EOF
+overlay.overlayObject(dactyl, {
+    open: function open(urls, params, force) {
+        if (typeof urls === "string") {
+            let matches = urls.match(/^(\d+): /);
+            if (matches) {
+                tabs.switchTo(urls, true);
+                return;
+            }
+        }
+        open.superapply(this, arguments);
+    }
+});
+completion.addUrlCompleter("buffer", "Open Tabs", completion.buffer);
+EOF
+
+set complete=buffer,history,suggestion
+
+hi FontFixed -append font-size: 12pt !important;
+
+" some groups -- such as `CmdLine` and `StatusLine` -- are linked by default
+hi -append -link FontFixed Hint
+hi -append -link FontFixed CompItem
+hi -append -link FontFixed CompTitle
+
+" vim: set ft=pentadactyl:
