@@ -12,6 +12,9 @@ function fish_user_key_bindings
 	fish_vi_key_bindings
 end
 
+function fish_mode_prompt
+end
+
 alias l "ls -l"
 
 function task
@@ -19,6 +22,13 @@ function task
     /usr/bin/task sync
 end
 
-set -gx PATH /opt/cuda/bin $PATH
+function fish_user_key_bindings
+    bind -M insert \cy dup
+end
+
+function dup
+    urxvt -cd (pwd)&
+end
+
+set -gx PATH /opt/cuda/bin /usr/local/bin ~/.cargo/bin $PATH
 set -gx XDG_CONFIG_HOME $HOME/.config
-alias scp-calzone "scp -oProxyCommand=\"ssh -W %h:%p nweninge@pizza.cs.ualberta.ca\""
