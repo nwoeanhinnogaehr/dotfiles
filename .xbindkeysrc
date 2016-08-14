@@ -77,7 +77,7 @@
 "poweroff"
   Mod4 + End
 
-"firefox"
+"qutebrowser"
   Mod4 + C
 
 "scrot"

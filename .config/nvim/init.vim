@@ -18,6 +18,7 @@ Plug 'tpope/vim-speeddating'
 Plug 'rust-lang/rust.vim'
 Plug 'racer-rust/vim-racer'
 Plug 'munshkr/vim-tidal'
+Plug 'lervag/vimtex'
 
 " Add plugins to &runtimepath
 call plug#end()
