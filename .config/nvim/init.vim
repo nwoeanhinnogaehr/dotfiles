@@ -9,7 +9,7 @@ endfunction
 Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
 Plug 'zchee/deoplete-clang'
 Plug 'Chiel92/vim-autoformat'
-Plug 'freeo/vim-kalisi'
+Plug '0ax1/lxvc'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'zchee/deoplete-jedi'
@@ -18,6 +18,7 @@ Plug 'tpope/vim-speeddating'
 Plug 'rust-lang/rust.vim'
 Plug 'racer-rust/vim-racer'
 Plug 'munshkr/vim-tidal'
+Plug 'vim-airline/vim-airline'
 
 " Add plugins to &runtimepath
 call plug#end()
@@ -34,7 +35,7 @@ map <Esc><Esc> :w<CR>
 map Y y$
 set clipboard=unnamed
 
-colorscheme kalisi
+colorscheme lxvc
 set background=dark
 set t_Co=256
 

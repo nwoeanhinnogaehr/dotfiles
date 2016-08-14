@@ -30,5 +30,6 @@ function dup
     urxvt -cd (pwd)&
 end
 
-set -gx PATH /opt/cuda/bin /usr/local/bin ~/.cargo/bin $PATH
+set -gx PATH /opt/cuda/bin /usr/local/bin ~/.cargo/bin /usr/bin/core_perl $PATH
 set -gx XDG_CONFIG_HOME $HOME/.config
+set -gx RUST_SRC_PATH /home/me/tmp/rust/src
