@@ -30,6 +30,11 @@ function dup
     urxvt -cd (pwd)&
 end
 
-set -gx PATH /opt/cuda/bin /usr/local/bin ~/.cargo/bin /usr/bin/core_perl $PATH
+set -gx PATH /usr/local/bin ~/.cargo/bin /usr/bin/core_perl $PATH
+if test -d /opt/cuda/bin
+    set -gx PATH /opt/cuda/bin $PATH
+end
 set -gx XDG_CONFIG_HOME $HOME/.config
 set -gx RUST_SRC_PATH /home/me/tmp/rust/src
+alias scp-calzone "scp -oProxyCommand=\"ssh -W %h:%p nweninge@pizza.cs.ualberta.ca\""
+alias vim nvim
