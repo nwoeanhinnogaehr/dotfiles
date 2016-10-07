@@ -17,10 +17,6 @@ end
 
 alias l "ls -l"
 
-function task
-    /usr/bin/task $argv
-    /usr/bin/task sync
-end
 
 function fish_user_key_bindings
     bind -M insert \cy dup
@@ -30,11 +26,21 @@ function dup
     urxvt -cd (pwd)&
 end
 
-set -gx PATH /usr/local/bin ~/.cargo/bin /usr/bin/core_perl $PATH
+function task
+    /usr/bin/task $argv
+    ~/bg/render.sh
+end
+
+set -gx PATH /usr/local/bin ~/.cargo/bin /usr/bin/core_perl ~/bin/ $PATH
 if test -d /opt/cuda/bin
     set -gx PATH /opt/cuda/bin $PATH
 end
 set -gx XDG_CONFIG_HOME $HOME/.config
 set -gx RUST_SRC_PATH /home/me/tmp/rust/src
+set -gx _JAVA_AWT_WM_NONREPARENTING 1
+set -gx ANTLR4 "/usr/share/java/antlr-complete.jar"
+set -gx CLASSPATH ".:/usr/share/java/antlr-complete.jar:/usr/local/lib/ST-4.0.8.jar"
+
 alias scp-calzone "scp -oProxyCommand=\"ssh -W %h:%p nweninge@pizza.cs.ualberta.ca\""
 alias vim nvim
+alias top "top -o '%CPU'"
