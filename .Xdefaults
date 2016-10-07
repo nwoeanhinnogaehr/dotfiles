@@ -15,7 +15,7 @@ URxvt*scrollWithBuffer: true
 ! scroll back to the bottom on keypress
 URxvt*scrollTtyKeypress: true
 URxvt.perl-ext-common: default,matcher
-URxvt.url-launcher: /usr/bin/firefox
+URxvt.url-launcher: /usr/bin/qutebrowser
 URxvt.matcher.button: 1
 ! --- ~/.Xresources ------------------------------------------------------------
 ! ------------------------------------------------------------------------------

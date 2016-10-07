@@ -31,7 +31,7 @@ function task
     ~/bg/render.sh
 end
 
-set -gx PATH /usr/local/bin ~/.cargo/bin /usr/bin/core_perl ~/bin/ $PATH
+set -gx PATH /usr/local/bin ~/.cargo/bin /usr/bin/core_perl /usr/bin/vendor_perl $PATH
 if test -d /opt/cuda/bin
     set -gx PATH /opt/cuda/bin $PATH
 end

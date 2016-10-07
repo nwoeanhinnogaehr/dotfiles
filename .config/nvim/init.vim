@@ -1,11 +1,12 @@
 call plug#begin('~/.vim/plugged')
 
-" Make sure you use single quotes
-Plug 'vim-scripts/ReplaceWithRegister'
-Plug 'sbl/scvim'
 function! DoRemote(arg)
   UpdateRemotePlugins
 endfunction
+
+" Make sure you use single quotes
+Plug 'vim-scripts/ReplaceWithRegister'
+Plug 'sbl/scvim'
 Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
 Plug 'zchee/deoplete-clang'
 Plug 'Chiel92/vim-autoformat'
@@ -21,6 +22,7 @@ Plug 'munshkr/vim-tidal'
 Plug 'lervag/vimtex'
 Plug 'vim-airline/vim-airline'
 Plug 'artur-shaik/vim-javacomplete2'
+Plug 'neomake/neomake'
 
 " Add plugins to &runtimepath
 call plug#end()
@@ -71,3 +73,21 @@ nnoremap <A-l> <C-w>l
 " java
 autocmd FileType java setlocal omnifunc=javacomplete#Complete
 let g:JavaComplete_SourcesPath = "/home/me/school/cmput/415/Assignments/SCalc_template/gen"
+
+" syntastic
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
+
+" vimtex
+let g:vimtex_view_method = "mupdf"
+let g:vimtex_indent_enabled = 1
+let g:vimtex_latexmk_enabled = 1
+let g:vimtex_latexmk_callback = 1
+
+" neomake
+autocmd! BufWritePost * Neomake
