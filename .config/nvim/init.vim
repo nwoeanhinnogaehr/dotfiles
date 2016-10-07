@@ -21,6 +21,7 @@ Plug 'racer-rust/vim-racer'
 Plug 'munshkr/vim-tidal'
 Plug 'lervag/vimtex'
 Plug 'vim-airline/vim-airline'
+Plug 'artur-shaik/vim-javacomplete2'
 Plug 'neomake/neomake'
 
 " Add plugins to &runtimepath
@@ -68,6 +69,10 @@ nnoremap <A-h> <C-w>h
 nnoremap <A-j> <C-w>j
 nnoremap <A-k> <C-w>k
 nnoremap <A-l> <C-w>l
+
+" java
+autocmd FileType java setlocal omnifunc=javacomplete#Complete
+let g:JavaComplete_SourcesPath = "/home/me/school/cmput/415/Assignments/SCalc_template/gen"
 
 " syntastic
 "set statusline+=%#warningmsg#
