@@ -34,10 +34,12 @@ set expandtab
 set hidden
 set scrolloff=4
 set foldmethod=syntax
+au BufRead * normal zR
 autocmd BufWritePre * :%s/\s\+$//e
 map <Esc><Esc> :w<CR>
 map Y y$
 set clipboard=unnamed
+xmap <Space> :normal<Space>
 
 colorscheme lxvc
 set background=dark
@@ -90,4 +92,5 @@ let g:vimtex_latexmk_enabled = 1
 let g:vimtex_latexmk_callback = 1
 
 " neomake
-autocmd! BufWritePost * Neomake
+"autocmd! BufWritePost * Neomake
+"let g:neomake_java_javac_classpath = "/home/me/school/cmput/415/Assignments/SCalc_template/gen:/home/me/school/cmput/415/Assignments/SCalc_template/src:/usr/share/java/antlr-complete.jar"
